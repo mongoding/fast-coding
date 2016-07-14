@@ -15,22 +15,18 @@
         <dependency>
             <groupId>net.oschina.durcframework</groupId>
             <artifactId>durcframework-core</artifactId>
-            <version>1.0.16</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.4</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.1.41</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.31</version>
         </dependency>
         <dependency>
             <groupId>org.apache.velocity</groupId>
@@ -40,30 +36,25 @@
         <dependency>
             <groupId>org.sitemesh</groupId>
             <artifactId>sitemesh</artifactId>
-            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>6.0.29</version>
             <scope>provided</scope>
         </dependency>
         <!-- 支持的数据源,默认已经支持mysql -->
         <dependency>
             <groupId>net.sourceforge.jtds</groupId>
             <artifactId>jtds</artifactId>
-            <version>1.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ant</groupId>
             <artifactId>ant</artifactId>
-            <version>1.8.2</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.ant</groupId>
@@ -102,8 +93,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

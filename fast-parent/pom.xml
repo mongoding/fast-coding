@@ -9,104 +9,154 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <spring.version>4.3.1.RELEASE</spring.version>
+        <hibernate.version>5.2.4.Final</hibernate.version>
+
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>net.oschina.durcframework</groupId>
+                <artifactId>durcframework-core</artifactId>
+                <version>1.0.16</version>
+            </dependency>
+            <!-- 数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.0.22</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.13</version>
+            </dependency>
+            <dependency>
+                <groupId>org.sitemesh</groupId>
+                <artifactId>sitemesh</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>6.0.29</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.jtds</groupId>
+                <artifactId>jtds</artifactId>
+                <version>1.2.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.ant</groupId>
+                <artifactId>ant</artifactId>
+                <version>1.8.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant-launcher</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- 数据库驱动包 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.31</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>3.14</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>3.14</version>
+            </dependency>
 
 
-        <!-- dubbo -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo-jx</artifactId>
 
-        </dependency>
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.dangdang</groupId>
-            <artifactId>config-toolkit</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-        </dependency>
-
-        <!-- Google Kaptcha验证码 -->
-        <dependency>
-            <groupId>com.google.code</groupId>
-            <artifactId>kaptcha</artifactId>
-            <version>2.3.2</version>
-        </dependency>
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+            <version>4.12</version>
         </dependency>
         <!-- Spring相关 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-instrument</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <!-- Mybatis相关 -->
@@ -119,56 +169,63 @@
             <artifactId>mybatis-spring</artifactId>
         </dependency>
 
-        <!-- 数据库连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-        </dependency>
+
+
 
         <!-- Redis相关 -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
+            <version>1.7.2.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
+            <version>2.8.1</version>
         </dependency>
 
         <!-- hessian包 -->
         <dependency>
             <groupId>com.caucho</groupId>
             <artifactId>hessian</artifactId>
+            <version>4.0.38</version>
         </dependency>
         <!-- common相关包 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
         </dependency>
         <dependency>
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
+            <version>2.1</version>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
+            <version>1.3.2</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
+            <version>1.9.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
         </dependency>
         <!--velocity -->
         <dependency>
@@ -181,63 +238,59 @@
             <artifactId>velocity-tools</artifactId>
             <version>2.0</version>
         </dependency>
-        <!-- 数据库驱动包 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+
+
         <!-- 日志包 -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.21</version>
         </dependency>
         <!-- 验证 -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.version}}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
         <!-- json -->
 
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>2.8.0</version>
         </dependency>
-        <!-- json -->
 
-        <dependency>
-            <groupId>net.sf.ezmorph</groupId>
-            <artifactId>ezmorph</artifactId>
-            <version>1.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
-            <classifier>jdk15</classifier>
-        </dependency>
         <!-- HttpClient -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
+
+       <!--
+
+         <dependency>
+         <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <exclusions>
                 <exclusion>
@@ -257,83 +310,107 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpmime</artifactId>
-        </dependency>
+   </dependency>
+            -->
+
         <!-- url伪静态工具包 -->
-        <dependency>
-            <groupId>org.tuckey</groupId>
-            <artifactId>urlrewritefilter</artifactId>
-            <version>4.0.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.tuckey</groupId>-->
+            <!--<artifactId>urlrewritefilter</artifactId>-->
+            <!--<version>4.0.4</version>-->
+        <!--</dependency>-->
         <!-- Memcached 客户端 -->
-        <dependency>
-            <groupId>com.whalin</groupId>
-            <artifactId>Memcached-Java-Client</artifactId>
-            <version>3.0.2</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.whalin</groupId>-->
+            <!--<artifactId>Memcached-Java-Client</artifactId>-->
+            <!--<version>3.0.2</version>-->
+        <!--</dependency>-->
 
         <!-- 加密 -->
-        <dependency>
-            <groupId>com.jiuxian</groupId>
-            <artifactId>bcprov-jdk14-145</artifactId>
-            <version>1.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.jiuxian</groupId>-->
+            <!--<artifactId>bcprov-jdk14-145</artifactId>-->
+            <!--<version>1.0</version>-->
+        <!--</dependency>-->
         <!-- Jboss需要的 -->
-        <dependency>
-            <groupId>javax.annotations</groupId>
-            <artifactId>common-annotations</artifactId>
-            <version>1.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>javax.annotations</groupId>-->
+            <!--<artifactId>common-annotations</artifactId>-->
+            <!--<version>1.0</version>-->
+        <!--</dependency>-->
         <!-- ESAPI -->
-        <dependency>
-            <groupId>org.owasp.esapi</groupId>
-            <artifactId>esapi</artifactId>
-            <version>2.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org</groupId>
-            <artifactId>tempuri</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jdom</groupId>
-            <artifactId>jdom</artifactId>
-            <version>1.1.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.juhuasuan</groupId>
-            <artifactId>osprey</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.spy</groupId>
-            <artifactId>spymemcached</artifactId>
-            <version>2.11.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.simple-spring-memcached</groupId>
-            <artifactId>spymemcached</artifactId>
-            <version>2.8.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.owasp.esapi</groupId>-->
+            <!--<artifactId>esapi</artifactId>-->
+            <!--<version>2.1.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org</groupId>-->
+            <!--<artifactId>tempuri</artifactId>-->
+            <!--<version>1.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>commons-codec</groupId>-->
+            <!--<artifactId>commons-codec</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.jdom</groupId>-->
+            <!--<artifactId>jdom</artifactId>-->
+            <!--<version>1.1.3</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.google.code</groupId>-->
+            <!--<artifactId>gson</artifactId>-->
+            <!--<version>2.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.juhuasuan</groupId>-->
+            <!--<artifactId>osprey</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>net.spy</groupId>-->
+            <!--<artifactId>spymemcached</artifactId>-->
+            <!--<version>2.11.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.google.code.simple-spring-memcached</groupId>-->
+            <!--<artifactId>spymemcached</artifactId>-->
+            <!--<version>2.8.4</version>-->
+        <!--</dependency>-->
         <!-- poi -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.9</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.9</version>
-        </dependency>
+
+            <!--<dependency>-->
+            <!--<groupId>com.dangdang</groupId>-->
+            <!--<artifactId>config-toolkit</artifactId>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--<groupId>org.apache.zookeeper</groupId>-->
+            <!--<artifactId>zookeeper</artifactId>-->
+            <!--</dependency>-->
+
+            <!-- Google Kaptcha验证码 -->
+            <!--<dependency>-->
+            <!--<groupId>com.google.code</groupId>-->
+            <!--<artifactId>kaptcha</artifactId>-->
+            <!--<version>2.3.2</version>-->
+            <!--</dependency>-->
+            <!-- dubbo -->
+            <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>dubbo-jx</artifactId>-->
+
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>org.javassist</groupId>-->
+            <!--<artifactId>javassist</artifactId>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>org.apache.curator</groupId>-->
+            <!--<artifactId>curator-framework</artifactId>-->
+            <!--</dependency>-->
+
         </dependencies>
     </dependencyManagement>
 
